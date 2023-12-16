@@ -1,6 +1,6 @@
 export interface CardProps {
     id: number;
-    title: string;
+    name: string;
     description: string;
     price: number;
     rating: number;

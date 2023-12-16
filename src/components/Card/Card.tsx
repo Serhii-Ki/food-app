@@ -6,7 +6,7 @@ import styles from './Card.module.css';
 
 function Card(props: CardProps) {
 	return (
-		<Link to={'/'} style={{textDecoration: 'none'}}>
+		<Link to={`/product/${props.id}`} style={{textDecoration: 'none'}}>
 			<div className={styles['card']}>
 				<div className={styles['head']} style={{backgroundImage: `url('${props.img}')`}}>
 					<div className={styles['price']}>
@@ -22,7 +22,7 @@ function Card(props: CardProps) {
 					</div>
 				</div>
 				<div className={styles['footer']}>
-					<div className={styles['title']}>{props.title}</div>
+					<div className={styles['title']}>{props.name}</div>
 					<div className={styles['description']}>{props.description}</div>
 				</div>
 			</div>
