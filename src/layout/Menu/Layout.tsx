@@ -1,16 +1,25 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import cn from 'classnames';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '../../components/Button/Button';
+import { AppDispatch, RootState } from '../../store/store';
 
 import styles from './Layout.module.css';
-
+import { getProfile, userActions } from '../../store/user.slice';
+import { useEffect } from 'react';
 
 function Layout() {
 	const navigate = useNavigate();
+	const dispatch = useDispatch<AppDispatch>();
+	const profile = useSelector((s: RootState) => s.user.profile);
+
+	useEffect(() => {
+		dispatch(getProfile());
+	},[dispatch]);
 
 	const logOut = () => {
-		localStorage.removeItem('jwt');
+		dispatch(userActions.logOut());
 		navigate('/auth/login');
 	};
 
@@ -20,10 +29,10 @@ function Layout() {
 				<div className={styles['user']}>
 					<img className={styles['user-avatar']} src="./user-avatar.png" alt="User avatar" />
 					<div className={styles['name']}>
-						Kiba Sergey
+						{profile?.name}
 					</div>
 					<div className={styles['mail']}>
-						kiba@gmail.com
+						{profile?.email}
 					</div>
 				</div>
 				<div className={styles['menu']}>
