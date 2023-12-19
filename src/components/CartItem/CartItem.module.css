@@ -1,0 +1,82 @@
+.item {
+    display: flex;
+    gap: 20px;
+    min-width: 512px;
+    margin-bottom: 25px;
+}
+
+.image {
+    width: 82px;
+    height: 82px;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.actions {
+    margin-left: auto;
+    display: flex;
+    gap: 5px;
+    align-items: start;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.price {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(---primary-color);
+}
+
+.minus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    width: 29px;
+    height: 29px;
+    cursor: pointer;
+}
+
+.plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    width: 29px;
+    height: 29px;
+    cursor: pointer;
+}
+
+.delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    width: 29px;
+    height: 29px;
+    cursor: pointer;
+}
+
+.number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 600;
+}
